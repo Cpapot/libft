@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 17:13:20 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/08 17:22:03 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/08 18:10:43 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 			return (s1[i] - s2[i]);
 		i++;
 	}
+	if (i < n)
+		return (s1[i] - s2[i]);
 	return (0);
 }
