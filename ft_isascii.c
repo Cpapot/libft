@@ -3,23 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpapot <cpapot@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:58:52 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/08 13:59:37 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/09 10:08:31 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);
 }
-
-/*
-#include<stdio.h>
-int main()
-{
-    int c = ft_isascii(161);
-    printf("%d",c);
-}
-*/

@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpapot <cpapot@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:06:33 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/08 14:06:49 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/09 11:54:06 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isprint(int c)
 {
-	return (c > 31 && c <= 127);
+	return (c > 31 && c <= 126);
 }
 /*
 #include<stdio.h>

@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpapot <cpapot@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:44:41 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/08 17:15:20 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/09 14:05:47 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stddef.h>
-
-size_t	ft_strlen(const char *str);
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -25,14 +23,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	len = ft_strlen(dst);
 	if (size == 0)
 		return (ft_strlen(src));
-	while (src[u] != '\0')
+	while (dst[u] != '\0')
 		u++;
 	while (dst[i] != '\0' && src[i] != '\0' && u + i < size - 1)
 	{
 		dst[i + u] = src[i];
 		i++;
 	}
-	dst[i + u] = '\0';
 	if (size < len)
 		return (ft_strlen(src) + size);
 	else

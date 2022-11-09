@@ -3,23 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpapot <cpapot@student.42.fr>              +#+  +:+       +#+        */
+/*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 13:19:56 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/08 14:06:04 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/09 10:00:19 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalnum(int c)
 {
-	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9'));
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || \
+	(c >= '0' && c <= '9'));
 }
-
-/*
-#include <stdio.h>
-int main()
-{
-    int c = ft_isalnum('*');
-    printf("%d", c);
-}
-*/
