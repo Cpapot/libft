@@ -1,36 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 15:30:42 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/11 17:21:09 by cpapot           ###   ########.fr       */
+/*   Created: 2022/11/11 11:09:49 by cpapot            #+#    #+#             */
+/*   Updated: 2022/11/11 14:46:03 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	intlen(int n)
 {
-	char	*result;
-	size_t	i;
+	int	result;
 
-	i = 0;
-	if (start > ft_strlen(s))
-		return ("");
-	if (start + len > ft_strlen(s))
-		result = malloc(sizeof(char) * (ft_strlen(s) - start + 1));
-	else
-		result = malloc(sizeof(char) * (len + 1));
+	result = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		n = -n;
+		result++;
+	}
+	while (n != 0)
+	{
+		n = n / 10;
+		result++;
+	}
+	return (result);
+}
+
+char	*ft_itoa(int n)
+{
+	int		i;
+	char	*result;
+	int		u;
+	long	nbr;
+
+	nbr = n;
+	i = intlen(n) - 1;
+	u = -1;
+	result = malloc(sizeof(char) * (intlen(n) + 1));
 	if (result == 0)
 		return (0);
-	while (i != len && s[i + start] != '\0')
+	if (nbr < 0)
 	{
-		result[i] = s[i + start];
-		i++;
+		result[0] = '-';
+		nbr = -nbr;
+		u = 0;
 	}
-	result[i] = '\0';
+	result[i + 1] = '\0';
+	while (i != u)
+	{
+		result[i] = (nbr % 10) + 48;
+		nbr = nbr / 10;
+		i--;
+	}
 	return (result);
 }

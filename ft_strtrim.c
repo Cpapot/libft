@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 19:46:57 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/10 23:39:43 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/11 16:59:23 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-int	is_set(char *set, char c)
+int	is_set(char const *set, char c)
 {
 	int	i;
 
@@ -36,7 +36,7 @@ int	is_set(char *set, char c)
 	return (0);
 }
 
-int	strlen_st(char const *s1, char *set)
+int	strlen_st(char const *s1, char const *set)
 {
 	int	i;
 	int	u;
@@ -45,6 +45,8 @@ int	strlen_st(char const *s1, char *set)
 	u = ft_strlen(s1) - 1;
 	while (is_set(set, s1[i]) == 1)
 		i++;
+	if (i == u + 1)
+		return (0);
 	while (is_set(set, s1[u]) == 1)
 	{
 		u--;
@@ -66,7 +68,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	result = malloc(sizeof(char) *(strlen_st(s1, set) + 1));
 	while (is_set(set, s1[i]))
 		i++;
-	while (is_set(set, s1[y]))
+	while (y > -1 && is_set(set, s1[y]))
 		y--;
 	while (s1[i] != '\0' && y + 1 != i)
 	{
@@ -74,5 +76,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 		u++;
 		i++;
 	}
+	result[u] = '\0';
 	return (result);
 }
+
+/*
+int main()
+{
+	char s1[] = "";
+	printf("%s", ft_strtrim(s1, "\0"));
+}
+*/
