@@ -1,18 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/11 13:59:54 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/12 12:13:40 by cpapot           ###   ########.fr       */
+/*   Created: 2022/11/12 12:05:01 by cpapot            #+#    #+#             */
+/*   Updated: 2022/11/12 12:59:40 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+typedef struct s_list
 {
-	write (fd, s, ft_strlen(s));
+	void			*content;
+	struct s_list	*next;
+}					t_list;
+
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*test;
+
+	test = malloc(sizeof(t_list));
+	test->content = content;
+	test->next = 0;
+	return (test);
+}
+
+int main()
+{
+
+	t_list	*ft_lstnew();
 }
