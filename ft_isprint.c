@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:06:33 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/09 11:54:06 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/13 17:29:19 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,3 @@ int	ft_isprint(int c)
 {
 	return (c > 31 && c <= 126);
 }
-/*
-#include<stdio.h>
-int main()
-{
-    int i = ft_isprint('*');
-    printf("%d",i);
-}
-*/

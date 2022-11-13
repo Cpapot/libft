@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 11:30:34 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/10 11:42:20 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/13 17:30:04 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-/*
-int main()
-{
-	char *s = "salut";
-	char s1[10];
-	printf("%s", memcpy(s1,s,5));
-}
-*/

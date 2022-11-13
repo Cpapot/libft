@@ -6,21 +6,11 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 19:46:57 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/11 16:59:23 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/13 17:31:01 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
 
 int	is_set(char const *set, char c)
 {
@@ -79,11 +69,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	result[u] = '\0';
 	return (result);
 }
-
-/*
-int main()
-{
-	char s1[] = "";
-	printf("%s", ft_strtrim(s1, "\0"));
-}
-*/
