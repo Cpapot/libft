@@ -6,7 +6,7 @@
 #    By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 14:44:54 by cpapot            #+#    #+#              #
-#    Updated: 2022/11/13 18:42:54 by cpapot           ###   ########.fr        #
+#    Updated: 2022/11/14 19:16:39 by cpapot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,10 @@ SRCS	=	ft_isalpha.c ft_putnbr_fd.c ft_putendl_fd.c \
 			ft_strncmp.c ft_calloc.c ft_strdup.c \
 			ft_strtrim.c ft_split.c ft_itoa.c \
 			ft_strjoin.c ft_lstnew.c ft_lstadd_front.c \
-			ft_lstadd_back.c
+			ft_lstadd_back.c ft_lstsize.c ft_lstlast.c \
+			ft_lstdelone.c ft_lstiter.c ft_lstclear.c \
+			ft_lstmap.c
+
 HEADERS = libft.h
 CFLAGS = -Wall -Wextra -Werror
 OBJS	= ${SRCS:.c=.o}

@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 12:05:01 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/13 18:33:34 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/14 13:43:45 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*test;
+	t_list	*node;
 
-	test = malloc(sizeof(t_list));
-	if (test == NULL)
+	node = malloc(sizeof(t_list));
+	if (node == NULL)
 		return (NULL);
-	test->content = content;
-	test->next = 0;
-	return (test);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }

@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 18:41:19 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/13 18:41:38 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/14 19:07:54 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*tmp;
+	t_list	*last;
 
-	tmp = *lst;
-	while (tmp->next)
+	if (new == NULL || lst == NULL)
+		return ;
+	last = *lst;
+	if (last == NULL)
+		*lst = new;
+	else
 	{
-		tmp = tmp->next;
+		while (last->next != NULL)
+			last = last->next;
+		last->next = new;
 	}
-	tmp->next = new;
 }
