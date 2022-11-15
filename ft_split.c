@@ -6,13 +6,13 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:35:50 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/13 17:27:03 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/15 19:15:40 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_word(char const *str, char c)
+static int	count_word(char const *str, char c)
 {
 	int	i;
 	int	count;
@@ -33,7 +33,7 @@ int	count_word(char const *str, char c)
 	return (count);
 }
 
-char	*ft_strndup(char const *src, int size)
+static char	*ft_strndup(char const *src, int size)
 {
 	char	*dest;
 	int		index;
@@ -51,7 +51,7 @@ char	*ft_strndup(char const *src, int size)
 	return (dest);
 }
 
-void	free_result(char **result)
+static char	**free_result(char **result)
 {
 	int	i;
 
@@ -62,6 +62,7 @@ void	free_result(char **result)
 		i++;
 	}
 	free (result);
+	return (NULL);
 }
 
 char	**ft_split(char const *str, char c)
@@ -75,7 +76,7 @@ char	**ft_split(char const *str, char c)
 	u = 0;
 	result = malloc(sizeof(char *) * (count_word(str, c) + 1));
 	if (result == 0)
-		return (0);
+		return (NULL);
 	while (str[i] != '\0')
 	{
 		while (str[i] == c)
@@ -85,9 +86,9 @@ char	**ft_split(char const *str, char c)
 			i++;
 		result[u] = ft_strndup(&str[buff], i - buff);
 		if (result[u] == 0)
-			free_result(result);
+			return (free_result(result));
 		u++;
 	}
-	result[count_word(str, c)] = 0;
+	result[count_word(str, c)] = NULL;
 	return (result);
 }

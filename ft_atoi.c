@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:19:00 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/09 16:37:46 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/15 13:58:51 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	result;
-	int	minus;
+	long long int	i;
+	long long int	result;
+	long long int	minus;
 
 	i = 0;
 	result = 0;
@@ -36,5 +36,5 @@ int	ft_atoi(const char *str)
 	}
 	if (minus == 1)
 		result = -result;
-	return (result);
+	return ((int)result);
 }

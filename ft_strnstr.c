@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 13:45:14 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/15 10:50:53 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/15 17:18:59 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned long	i;
-	unsigned long	u;
+	size_t	i;
+	size_t	u;
 
 	i = 0;
-	if (ft_strlen(needle) == 0)
+	if (*needle == 0)
 		return ((char *)haystack);
-	if (ft_strlen(needle) > len)
-		return (0);
-	while (haystack[i] != '\0' && i < len)
+	if (needle[i] == '\0')
+		return ((char *)(needle));
+	while (i < len && haystack[i])
 	{
 		u = 0;
-		while (needle[u] != '\0' && needle[u] == haystack[u + i])
+		while (haystack[i + u] == needle[u] && haystack[i + u] && i + u < len)
 			u++;
-		if (needle[u] == '\0' && u + i <= len)
+		if (needle[u] == '\0')
 			return ((char *)&haystack[i]);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

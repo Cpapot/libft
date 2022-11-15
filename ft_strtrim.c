@@ -6,13 +6,13 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 19:46:57 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/15 10:55:26 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/15 15:32:21 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	is_set(char const *set, char c)
+static int	is_set(char const *set, char c)
 {
 	int	i;
 
@@ -26,7 +26,7 @@ int	is_set(char const *set, char c)
 	return (0);
 }
 
-int	strlen_st(char const *s1, char const *set)
+static int	strlen_st(char const *s1, char const *set)
 {
 	int	i;
 	int	u;

@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 11:44:20 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/10 14:55:13 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/15 15:59:45 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len )
 {
 	size_t		i;
 
+	if (dst == NULL && src == NULL)
+		return (dst);
+	if ((int)len == 0)
+		return (dst);
 	if (dst < src)
 	{
 		i = 0;
