@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 15:44:41 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/13 17:30:37 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/15 10:47:20 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	unsigned int	len;
 
 	i = 0;
+	if (size == 0)
+		return (ft_strlen(src));
 	len = ft_strlen(dst);
 	if (len + 1 > size)
 		return (size + ft_strlen(src));

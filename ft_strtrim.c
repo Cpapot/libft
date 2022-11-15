@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 19:46:57 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/13 17:31:01 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/15 10:55:26 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	u = 0;
 	y = ft_strlen(s1) - 1;
 	result = malloc(sizeof(char) *(strlen_st(s1, set) + 1));
+	if (result == NULL)
+		return (NULL);
 	while (is_set(set, s1[i]))
 		i++;
 	while (y > -1 && is_set(set, s1[y]))
