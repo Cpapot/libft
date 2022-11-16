@@ -6,7 +6,7 @@
 #    By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 14:44:54 by cpapot            #+#    #+#              #
-#    Updated: 2022/11/15 13:34:12 by cpapot           ###   ########.fr        #
+#    Updated: 2022/11/16 13:24:12 by cpapot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,4 +53,4 @@ fclean:		clean
 
 re:	fclean all
 
-.PHONY : re all clean fclean
+.PHONY : re all clean fclean bonus

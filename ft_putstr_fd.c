@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 13:59:54 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/13 16:10:07 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/16 13:13:54 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while (s[i] != '\0')
-	{
-		write (fd, &s[i], 1);
-		i++;
-	}
+	if (s == NULL)
+		return ;
+	write(fd, s, ft_strlen(s));
 }

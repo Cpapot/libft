@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:47:21 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/15 15:40:43 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/16 13:11:05 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t count, size_t size)
 	void			*result;
 	unsigned long	i;
 
-	if (SIZE_MAX / count < size)
+	if (count != 0 && SIZE_MAX / count < size)
 		return (NULL);
 	i = 0;
 	result = malloc(count * size);

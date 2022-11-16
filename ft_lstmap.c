@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 15:54:56 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/14 19:05:23 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/16 13:12:41 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*start;
 	t_list	*new;
 
-	if (lst == NULL)
+	if (lst == NULL && f == NULL && del == NULL)
 		return (NULL);
 	start = ft_lstnew(f(lst->content));
 	lst = lst->next;

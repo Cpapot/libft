@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 14:46:38 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/14 17:48:06 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/16 13:12:04 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (lst)
+	if (lst && del)
 	{
 		del(lst->content);
 		free(lst);

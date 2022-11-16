@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 14:10:05 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/11 14:21:05 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/16 13:13:09 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (s == NULL)
+		return ;
 	ft_putstr_fd(s, fd);
 	write (fd, "\n", 1);
 }

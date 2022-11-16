@@ -6,35 +6,43 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:19:00 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/15 13:58:51 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/16 12:17:39 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	overflow(int sign)
+{
+	if (sign == -1)
+		return (0);
+	else
+		return (-1);
+}
+
 int	ft_atoi(const char *str)
 {
-	long long int	i;
 	long long int	result;
-	long long int	minus;
+	int				minus;
 
-	i = 0;
 	result = 0;
 	minus = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	while ((*str >= 9 && *str <= 13) || *str == 32)
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		if (str[i] == '-')
-			minus++;
-		i++;
+		if (*str == '-')
+			minus--;
+		str++;
 	}
-	while ('9' >= str[i] && '0' <= str[i])
+	while ('9' >= *str && '0' <= *str)
 	{
-		result = result * 10 + (str[i] - 48);
-		i++;
+		if (result != (result * 10 + (*str - '0')) / 10)
+			return ((int) overflow(minus));
+		result = result * 10 + (*str - 48);
+		str++;
 	}
-	if (minus == 1)
+	if (minus == -1)
 		result = -result;
 	return ((int)result);
 }
