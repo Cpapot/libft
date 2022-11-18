@@ -6,7 +6,7 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 11:49:51 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/11 16:40:18 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/18 18:43:13 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*result;
 
 	i = 0;
+	if (!s || !f)
+		return (NULL);
 	result = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (result == 0)
 		return (0);

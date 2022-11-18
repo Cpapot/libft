@@ -6,13 +6,13 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:35:50 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/15 19:15:40 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/18 18:47:07 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_word(char const *str, char c)
+int	count_word(char const *str, char c)
 {
 	int	i;
 	int	count;
@@ -33,15 +33,15 @@ static int	count_word(char const *str, char c)
 	return (count);
 }
 
-static char	*ft_strndup(char const *src, int size)
+char	*ft_strndup(char const *src, int size)
 {
 	char	*dest;
 	int		index;
 
 	index = 0;
 	dest = malloc(sizeof(char) * (size + 1));
-	if (dest == 0)
-		return (0);
+	if (dest == NULL)
+		return (NULL);
 	while (src[index] != '\0' && index < size)
 	{
 		dest[index] = src[index];
@@ -51,7 +51,7 @@ static char	*ft_strndup(char const *src, int size)
 	return (dest);
 }
 
-static char	**free_result(char **result)
+char	**free_result(char **result)
 {
 	int	i;
 

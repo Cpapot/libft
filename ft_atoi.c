@@ -6,13 +6,13 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 14:19:00 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/16 12:17:39 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/18 18:29:13 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	overflow(int sign)
+int	overflow(int sign)
 {
 	if (sign == -1)
 		return (0);
