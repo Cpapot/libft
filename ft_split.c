@@ -6,13 +6,44 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:35:50 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/18 18:47:07 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/19 02:36:40 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_word(char const *str, char c)
+char	*ft_next_char(char *str, char c)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] == c)
+		i++;
+	return (&str[i]);
+}
+
+char	*ft_strndup(const char *s1, size_t n)
+{
+	char	*result;
+	int		len;
+	size_t	i;
+
+	i = 0;
+	if (ft_strlen(s1) < n)
+		return (NULL);
+	result = malloc(sizeof(char) * (n + 1));
+	if (result == 0)
+		return (NULL);
+	while (i != n)
+	{
+		result[i] = s1[i];
+		i++;
+	}
+	result[i] = '\0';
+	return (result);
+}
+
+int	ft_count_word(char const *str, char c)
 {
 	int	i;
 	int	count;
@@ -33,32 +64,14 @@ int	count_word(char const *str, char c)
 	return (count);
 }
 
-char	*ft_strndup(char const *src, int size)
-{
-	char	*dest;
-	int		index;
-
-	index = 0;
-	dest = malloc(sizeof(char) * (size + 1));
-	if (dest == NULL)
-		return (NULL);
-	while (src[index] != '\0' && index < size)
-	{
-		dest[index] = src[index];
-		index++;
-	}
-	dest[index] = '\0';
-	return (dest);
-}
-
-char	**free_result(char **result)
+char	**ft_free_malloc(char **result)
 {
 	int	i;
 
 	i = 0;
-	while (result[i] != 0)
+	while (result[i])
 	{
-		free (result[i]);
+		free(result[i]);
 		i++;
 	}
 	free (result);
@@ -67,28 +80,45 @@ char	**free_result(char **result)
 
 char	**ft_split(char const *str, char c)
 {
-	char	**result;
+	int		word_count;
+	int		word_len;
 	int		i;
-	int		buff;
-	int		u;
+	char	**result;
 
-	i = 0;
-	u = 0;
-	result = malloc(sizeof(char *) * (count_word(str, c) + 1));
-	if (result == 0)
+	if (!str)
 		return (NULL);
-	while (str[i] != '\0')
+	i = 0;
+	word_len = 0;
+	word_count = ft_count_word(str, c);
+	result = malloc(sizeof(char *) * (word_count + 1));
+	if (!result)
+		return (NULL);
+	while (i != word_count)
 	{
-		while (str[i] == c)
-			i++;
-		buff = i;
-		while (str[i] != c && str[i] != '\0')
-			i++;
-		result[u] = ft_strndup(&str[buff], i - buff);
-		if (result[u] == 0)
-			return (free_result(result));
-		u++;
+		str = ft_next_char((char *)&str[word_len], c);
+		word_len = 0;
+		while (str[word_len] != c && str[word_len])
+			word_len++;
+		result[i] = ft_strndup(str, word_len);
+		if (!result[i++])
+			return (ft_free_malloc(result));
 	}
-	result[count_word(str, c)] = NULL;
+	result[i] = NULL;
 	return (result);
 }
+/*
+#include <stdio.h>
+
+int main()
+{
+    char str[] = "     5 (fd)   1687 3;51 68732168947 654354;6897     3168   ";
+    char sep = ' ';
+    char **strs = ft_split(str, sep);
+    int u = 0;
+    while (strs[u])
+    {
+        printf("%s\n", strs[u]);
+        u++;
+    }
+}
+*/
