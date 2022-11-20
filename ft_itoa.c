@@ -6,13 +6,13 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 11:09:49 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/18 18:29:24 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/20 16:17:53 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	intlen(int n)
+static int	intlen(int n)
 {
 	int	result;
 

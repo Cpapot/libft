@@ -6,13 +6,13 @@
 /*   By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:35:50 by cpapot            #+#    #+#             */
-/*   Updated: 2022/11/19 02:36:40 by cpapot           ###   ########.fr       */
+/*   Updated: 2022/11/20 16:17:35 by cpapot           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_next_char(char *str, char c)
+static char	*ft_next_char(char *str, char c)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ char	*ft_next_char(char *str, char c)
 	return (&str[i]);
 }
 
-char	*ft_strndup(const char *s1, size_t n)
+static char	*ft_strndup(const char *s1, size_t n)
 {
 	char	*result;
 	int		len;
@@ -43,7 +43,7 @@ char	*ft_strndup(const char *s1, size_t n)
 	return (result);
 }
 
-int	ft_count_word(char const *str, char c)
+static int	ft_count_word(char const *str, char c)
 {
 	int	i;
 	int	count;
@@ -64,7 +64,7 @@ int	ft_count_word(char const *str, char c)
 	return (count);
 }
 
-char	**ft_free_malloc(char **result)
+static char	**ft_free_malloc(char **result)
 {
 	int	i;
 
@@ -106,19 +106,3 @@ char	**ft_split(char const *str, char c)
 	result[i] = NULL;
 	return (result);
 }
-/*
-#include <stdio.h>
-
-int main()
-{
-    char str[] = "     5 (fd)   1687 3;51 68732168947 654354;6897     3168   ";
-    char sep = ' ';
-    char **strs = ft_split(str, sep);
-    int u = 0;
-    while (strs[u])
-    {
-        printf("%s\n", strs[u]);
-        u++;
-    }
-}
-*/
