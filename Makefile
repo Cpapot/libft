@@ -6,11 +6,10 @@
 #    By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 14:44:54 by cpapot            #+#    #+#              #
-#    Updated: 2022/11/16 13:24:12 by cpapot           ###   ########.fr        #
+#    Updated: 2022/11/23 00:36:20 by cpapot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libft.a
 SRCS	=	ft_isalpha.c ft_putnbr_fd.c ft_putendl_fd.c \
 			ft_isdigit.c ft_putstr_fd.c ft_putchar_fd.c \
 			ft_strmapi.c ft_striteri.c ft_isalnum.c \
