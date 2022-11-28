@@ -6,9 +6,11 @@
 #    By: cpapot <cpapot@student.42lyon.fr >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/08 14:44:54 by cpapot            #+#    #+#              #
-#    Updated: 2022/11/23 00:36:20 by cpapot           ###   ########.fr        #
+#    Updated: 2022/11/28 23:19:34 by cpapot           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+NAME	= libft.a
 
 SRCS	=	ft_isalpha.c ft_putnbr_fd.c ft_putendl_fd.c \
 			ft_isdigit.c ft_putstr_fd.c ft_putchar_fd.c \
@@ -30,15 +32,18 @@ SRCBONUS =	ft_lstnew.c ft_lstadd_front.c \
 
 OBJBONUS	= ${SRCBONUS:.c=.o}
 
-HEADERS = libft.h
-CFLAGS = -Wall -Wextra -Werror
 OBJS	= ${SRCS:.c=.o}
 
+HEADERS = libft.h
+
+CFLAGS = -Wall -Wextra -Werror
+
 %.o:	%.c ${HEADERS} Makefile
-	$(CC) -I ${CFLAGS} -c $< -o ${<:.c=.o}
+	$(CC) -I ${CFLAGS} -c $< -o $@
 
 ${NAME}:	${OBJS}
 	ar rcs ${NAME} ${OBJS}
+
 all: ${NAME}
 
 bonus:		$(OBJBONUS) ${OBJS}
